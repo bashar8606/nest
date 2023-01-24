@@ -1,0 +1,41 @@
+@import "../../styles/util";
+
+.ns_stats_home {
+    background-color: #F5F5FF;
+    position: relative;
+}
+
+.content_wrap {
+    padding-top: 130px;
+    padding-bottom: 114px;
+
+    h2 {
+        max-width: 586px;
+    }
+}
+
+
+.col_right {
+    position: relative;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 1px;
+        height: 100%;
+        background-color: #C7C8CE;
+    }
+    &::after {
+        height: 70%;
+        left: 50%;
+    }
+}
+
+.stat_col {
+    @include min(992) {
+        padding: size(144) 0 size(130);
+        min-height: 100vh;
+    }
+}

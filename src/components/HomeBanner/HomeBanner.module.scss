@@ -1,0 +1,53 @@
+@import "../../styles/util";
+
+.ns_banner_home {
+    min-height: 1500px;
+    background-color: #C0C2BA;
+    position: relative;
+    :global(.container-fluid) {
+        position: sticky;
+    top: 0px;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    }
+}
+
+.logo_wrap {
+    width: 100%;
+    max-width: 68.4vw;
+    position: absolute;
+    padding-bottom: 50px;
+    bottom: 0;
+    left: 50px;
+    z-index: 12;
+    pointer-events: none;
+
+    .logo {
+        @include aspectRatio(1312, 283);
+    }
+}
+
+.canvas {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.content {
+    max-width: 460px;
+    margin-left: auto;
+    h4 {
+        @include lineHeight(34, 41);
+        color: #fff;
+        font-size: size(34);
+        font-weight: 300;
+        span {
+            font-weight: 500;
+        }
+    }
+}

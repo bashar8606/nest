@@ -1,0 +1,36 @@
+@import "../../styles/util";
+
+.ns_about_home {
+    padding: size(100) 0;
+
+    :global(.row) {
+        @include min(992) {
+            --bs-gutter-x: #{size(184)};
+        }
+    }
+
+    .img_wrap {
+        :global(.ratio) {
+            --bs-aspect-ratio: 67%;
+        }
+        img {
+            object-fit: cover;
+        }
+    }
+
+    .content_wrap {
+        max-width: 680px;
+    }
+
+    .col_left {
+        @include min(992) {
+            width: 46.5%;
+        }
+    }
+
+    .col_right {
+        @include min(992) {
+            width: 53.5%;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+//colors
+
+$primary: #007864;
+$secondary: #FFD800;
+$primary-dark: #0E403E;
+$text-dark: #2f2f2f;
+//fonts
+$primary-font: var(--bs-body-font-family);
+$base-size: 18;
+
+$cubic-line: cubic-bezier(.445,.05,.55,.95) ;
+// transform .6s 
+
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: ($resMin+px)) and (max-width: ($resMax+px)) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: ($res+px)) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: ($res+px)) {
+    @content;
+  }
+}
+
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin aspectRatio($w, $h) {
+  padding-bottom: calc(($h / $w) * 100%);
+  position: relative;
+
+  &>img,
+  &>picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+%noscroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+%fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: transform 0.75s cubic-bezier(0.38, 0.005, 0.215, 1), opacity 0.75s cubic-bezier(0.38, 0.005, 0.215, 1);
+  transition-duration: 0.5s;
+}

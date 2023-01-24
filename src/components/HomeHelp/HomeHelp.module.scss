@@ -1,0 +1,6 @@
+@import "../../styles/util";
+.ns_help_home {
+    @include min(992) {
+        padding: size(100) 0;
+    }
+}
